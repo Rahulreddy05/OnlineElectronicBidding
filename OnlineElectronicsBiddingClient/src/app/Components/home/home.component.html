@@ -1,0 +1,29 @@
+<body>
+  
+  <div>
+    <h1 style="text-align:center;margin-top: 2%;color: #37474f;">Welcome To BigBidder</h1>
+    <h4 style="text-align:center;margin-top: 2%;color: #37474f;">Make Your Bidding and Grab The Items You Like</h4>
+  </div>
+  
+  <div class="row">
+  <div class="card sticky-action" *ngFor="let product of product1 let indexOfelement=index">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" [src]="getImage(product.image.id)">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">{{product.name}}<i class="material-icons right">more_vert</i></span>
+      <p><a>{{product.price}}$</a></p>
+    </div>
+    <div class="card-action">
+      <div>
+      <button class="container btn btn-primary" style="width: fit-content;" (click)="biddingPage(product.productId)">BidNow</button></div>
+        <a style="margin-top: 6%;">{{product.startDate}}</a>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Description<i class="material-icons right">close</i></span>
+      <p>{{product.discription}}</p>
+    </div>
+  </div>
+  
+
+</div></body>

@@ -1,0 +1,52 @@
+<div class="occupy">
+  <div class="jumbotron container" style="background-color: white;" >
+        
+
+        </div>
+     <!-- ************************************************************************ -->   
+  <div class="container col-md-4" style="background-color:#EAF3F9;margin-top: -7%;padding-top: 4%;padding-bottom: 3%;border-radius: 50px 20px;">
+  <form class="container col-md-8" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <h3 style="color: #2081C3">Login</h3>
+  <div class="form-group">
+  <label for="email"><b>Email</b></label>
+  <input class="form-control" name="email" type="text" formControlName="email">
+  <div *ngIf="email.invalid && (email.dirty || email.touched)"
+      style="color:red">
+  <div *ngIf="email.errors.required">
+      *Email is required.
+    </div>
+    <div *ngIf="email.errors.email">
+      *Enter proper email id.
+    </div>
+  </div>
+  </div>
+  <div class="form-group">
+  <label for="password"><b>Password</b></label><button class="btn btn-link" style="float: right;margin-top: -2%;" routerLink="forgot-password">Forgot Password</button>
+  <input class="form-control" name="password" type="password" formControlName="password">
+  <div *ngIf="password.invalid && (password.dirty || password.touched)"
+      style="color:red">
+  <div *ngIf="password.errors.required">
+      *Password is required.
+    </div>
+    <div *ngIf="password.errors.minlength">
+      *Password must be at least 6 characters long.
+    </div>
+  </div>
+  </div>
+  <div class="container col-md-8">
+  <button class="container btn btn-primary" name="login" type="submit" [disabled]="!loginForm.valid">Login</button>
+  </div>
+  <p *ngIf="message" class="alert alert-success">{{message}}</p>
+  <p *ngIf="message1" class="alert alert-danger">{{message1}}</p>
+  <div class="form-group">
+    <p style="font-size: 13px;padding-top: 5px">By continuing, you agree to BB Conditions of Use and Privacy Notice.</p>
+    </div>
+  </form>
+  <hr>
+  <div class="container col-md-5" style="margin-top: -5%">
+  <h6 style="color: #767676;font-size: 14px;background-color: #EAF3F9;padding-bottom: 5px;padding-top: 5px" align="center">New to BigBidder?</h6>
+  <button class="container btn btn-primary"  routerLink="/siginin-signout">Sign Up</button>
+  </div>
+  </div>
+   <!-- **************Sign Up***************** -->
+     <!-- ************************************************************************ -->   

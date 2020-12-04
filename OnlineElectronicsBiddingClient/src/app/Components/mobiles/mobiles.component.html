@@ -1,0 +1,27 @@
+
+  
+<div class="row">
+  <div *ngFor="let product of product1 let indexOfelement=index">
+     <div *ngIf="product.category=='phone'">
+      <div class="card sticky-action">
+        <div>
+           <div class="card-image waves-effect waves-block waves-light">
+           <img class="activator" [src]="getImage(product.image.id)">
+           </div>
+         <div class="card-content">
+         <span class="card-title activator grey-text text-darken-4">{{product.name}}<i class="material-icons right">more_vert</i></span>
+         <p><a>{{product.price}}$</a></p>
+         </div>
+         <div class="card-action">
+         <a href="#">BidNow</a>
+         <a href="#">{{product.startDate}}</a>
+         </div>
+         <div class="card-reveal">
+         <span class="card-title grey-text text-darken-4">Discription<i class="material-icons right">close</i></span>
+         <p>{{product.discription}}</p>
+         </div>
+        </div>
+     </div>
+    </div>
+  </div>
+</div>

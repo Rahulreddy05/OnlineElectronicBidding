@@ -1,0 +1,27 @@
+
+
+<div *ngFor="let p of product">
+ <div *ngIf="p.productId==clickedId">
+   <div class="row">
+   
+    
+        <div class="card-image waves-effect waves-block waves-light col s8">
+        <img class="activator" [src]="getImage(p.image.id)">
+        </div>
+       
+       
+        <div class="container col s4" style="margin-top: 5%;">
+          <h2 style="font-weight: bold;">Name: {{p.name}}</h2>
+          <h4>Discription: {{p.discription}}</h4>
+          <h4>Bid Start Date: {{p.startDate}}</h4>
+          <h4>Bid Start Price: {{p.price}}$</h4>
+          <h4>Please Enter Your Bid price:</h4>
+          <input class="form-control" name="phonenumber" type="number">
+          <button class="container btn btn-primary" style="width: fit-content;" (click)="bidded()">BidNow</button>
+          <p *ngIf="message" style="margin-top: 10%;"class="alert alert-success">{{message}}</p>
+        </div>
+      </div>
+        </div>
+        </div>
+   
+       
